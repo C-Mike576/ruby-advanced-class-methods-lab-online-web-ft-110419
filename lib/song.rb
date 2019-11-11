@@ -17,12 +17,13 @@ class Song
 
   def save
     self.class.all << self
+    self
   end
   
   def self.create
    c = Song.new
    c.save
-   c
+   
   end
   
   def self.new_by_name(name)
@@ -32,7 +33,7 @@ class Song
   def self.create_by_name(name)
     c = Song.new(name)
     c.save
-    c
+    
   end
   
   def self.find_by_name(name)
