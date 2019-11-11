@@ -67,7 +67,7 @@ class Song
     songify.pop
     c = create_by_name(songify[1].strip)
     c.artist_name = songify[0].strip
-    c.save
+    c
     
   end
   
