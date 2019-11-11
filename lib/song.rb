@@ -65,7 +65,9 @@ class Song
   def self.create_from_filename(music)
     songify = music.split(/[-,.]/)
     songify.pop
-    Song.new(songify[1].strip, songify[0].strip)
+    c = create_by_name(songify[1].strip)
+    c.artist_name = songify[0].strip
+    
   end
   
   def self.destroy_all
