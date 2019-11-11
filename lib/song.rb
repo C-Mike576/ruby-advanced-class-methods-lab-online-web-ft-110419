@@ -36,12 +36,13 @@ class Song
   end
   
   def self.find_by_name(name)
-    @@all.each do |music|
-      if music.name == name
-        return music
-      end
-    end
-    nil
+    # @@all.each do |music|
+    #   if music.name == name
+    #     return music
+    #   end
+    # end
+    # nil
+    @@all.find{ |music| music.name == name}
   end
   
   def self.find_or_create_by_name(name)
@@ -66,7 +67,8 @@ class Song
     songify = music.split(/[-,.]/)
     songify.pop
     c = create_by_name(songify[1].strip)
-    c.artist_name=(""
+    c.artist_name= songify[0]
+    c
     
   end
   
