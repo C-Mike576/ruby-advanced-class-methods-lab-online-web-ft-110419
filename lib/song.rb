@@ -22,7 +22,7 @@ class Song
   def self.create
    c = Song.new
    c.save
-   
+   c
   end
   
   def self.new_by_name(name)
